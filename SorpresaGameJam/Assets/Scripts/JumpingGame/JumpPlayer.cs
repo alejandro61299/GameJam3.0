@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JumpPlayer : MonoBehaviour {
 
-
+    public GameObject roomManager;
     public AudioClip JumpClip;
     public AudioClip DieClip;
 
@@ -57,7 +58,7 @@ public class JumpPlayer : MonoBehaviour {
         }
         if(collision.gameObject.tag == "Aprovat")
         {
-            //TO DO: WIN
+            SceneManager.LoadScene("SampleScene");
         }
     }
 }

@@ -1772,7 +1772,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ee291200d6b3cb34582c5b4d7e06c3cc, type: 2}
+  - {fileID: 2100000, guid: e6489f1df4abc1c4ba677eecce404306, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2875,7 +2875,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.2567389, y: 0.16046047}
@@ -3388,6 +3388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf353016ca003644fb1b8c653362fb7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomManager: {fileID: 0}
   JumpClip: {fileID: 8300000, guid: b2785011fee58b543972fda234d59790, type: 3}
   DieClip: {fileID: 8300000, guid: da1e20cc787199141bf55ec8c3c5ccb7, type: 3}
   jump_amount: 600

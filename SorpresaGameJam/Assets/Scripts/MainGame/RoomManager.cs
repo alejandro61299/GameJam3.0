@@ -45,9 +45,8 @@ public class RoomManager : MonoBehaviour {
         spriteRenderer.sprite = roomsSprites[roomId];
         roomText.text = roomsNames[roomId];
         Object.Destroy(propsGameObject, 0.0f);
-        propsGameObject = Instantiate(roomObjectsPrefabs[currentRoom], new Vector3(0, 0, 0), Quaternion.identity);
+        propsGameObject = Instantiate(roomObjectsPrefabs[currentRoom]);
     }
-
     void Save()
     {
         XmlElement root = xmlDoc.DocumentElement;
@@ -61,16 +60,16 @@ public class RoomManager : MonoBehaviour {
         // Save current data
         XmlElement roomElement = xmlDoc.CreateElement("room");
         roomElement.SetAttribute("id", currentRoom.ToString());
-        XmlElement propsElement = xmlDoc.CreateElement("props");
+        //XmlElement propsElement = xmlDoc.CreateElement("props");
 
-        foreach (Transform child in propsGameObject.transform)
-        {
-            XmlElement propElement = xmlDoc.CreateElement("prop");
-            propElement.SetAttribute("active", child.gameObject.activeSelf.ToString());
-            propsElement.AppendChild(propElement);
-        }
+        ////foreach (Transform child in propsGameObject.transform)
+        ////{
+        ////    XmlElement propElement = xmlDoc.CreateElement("prop");
+        ////    propElement.SetAttribute("active", child.gameObject.activeSelf.ToString());
+        ////    propsElement.AppendChild(propElement);
+        ////}
 
-        root.AppendChild(propsElement);
+        //root.AppendChild(propsElement);
         root.AppendChild(roomElement);
         xmlDoc.Save(Application.dataPath + "/Data/data.xml");
     }
@@ -84,13 +83,13 @@ public class RoomManager : MonoBehaviour {
         currentRoom = System.Int32.Parse(roomNode.Attributes["id"].Value);
         ChangeRoom(currentRoom);
 
-        XmlNode propNode = propsNode.FirstChild;
+        //XmlNode propNode = propsNode.FirstChild;
 
-        foreach (Transform child in propsGameObject.transform)
-        {
-            child.gameObject.SetActive(bool.Parse(propNode.Attributes["active"].Value));
-            propNode = propNode.NextSibling;
-        }
+        //foreach (Transform child in propsGameObject.transform)
+        //{
+        //    child.gameObject.SetActive(bool.Parse(propNode.Attributes["active"].Value));
+        //    propNode = propNode.NextSibling;
+        //}
     }
 
 }
