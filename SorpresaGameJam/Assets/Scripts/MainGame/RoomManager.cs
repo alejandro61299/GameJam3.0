@@ -31,7 +31,7 @@ public class RoomManager : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ChangeRoom(++currentRoom);
+            //ChangeRoom(++currentRoom);
         }
     }
 
